@@ -53,7 +53,7 @@ app.use(cors());
 
 // TO DO: The server is shown that it is working 
 app.get('/',(req, res)=>{
-	res.send(database.user);
+	res.send("Hello, I'm Nguyen Hong Quan");
 });
 app.get('/profile/:id', (req, res)=>{
 	const {id} = req.params;

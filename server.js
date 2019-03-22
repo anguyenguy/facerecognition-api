@@ -139,8 +139,8 @@ app.post('/register', (req, res)=>{
 });
 
 
-app.listen(3001,()=>{
-	console.log('server is running..');
+app.listen(process.env.PORT || 3001,()=>{
+	console.log(`server is running..${process.env.POST}`);
 });
 
 /* --> res = this is working

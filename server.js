@@ -107,7 +107,7 @@ app.put('/image',(req, res)=>{
 
 // TO DO: User register
 app.post('/register', (req, res)=>{
-	const {email, username, password} = req.body;
+	const {email, name, password} = req.body;
 
 	const hash = bcrypt.hashSync(password);
 	db.transaction(trx => {
@@ -122,7 +122,7 @@ app.post('/register', (req, res)=>{
 				.returning('*')
 				.insert({
 					email: loginEmail[0],
-					name : username,
+					name : name,
 					joined : new Date()
 				}).then(user =>{
 					res.json(user[0]);
